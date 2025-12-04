@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+echo "Importing CSV files into database..."
+
+# Import inf_02
+echo "Importing INF.02 (624 questions)..."
+/opt/lampp/bin/mysql -u root exams --local-infile=1 -e "
+LOAD DATA LOCAL INFILE './model/data/inf_02/questions.csv'
+INTO TABLE questions
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(id, question_id, question, a, b, c, d, correct, image, image_fallback, category_name)
+SET id = NULL;
+"
+
+# Import inf_03
+echo "Importing INF.03 (1119 questions)..."
+/opt/lampp/bin/mysql -u root exams --local-infile=1 -e "
+LOAD DATA LOCAL INFILE './model/data/inf_03/questions.csv'
+INTO TABLE questions
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(id, question_id, question, a, b, c, d, correct, image, image_fallback, category_name)
+SET id = NULL;
+"
+
+# Import inf_04
+echo "Importing INF.04 (417 questions)..."
+/opt/lampp/bin/mysql -u root exams --local-infile=1 -e "
+LOAD DATA LOCAL INFILE './model/data/inf_04/questions.csv'
+INTO TABLE questions
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(id, question_id, question, a, b, c, d, correct, image, image_fallback, category_name)
+SET id = NULL;
+"
+
+echo ""
+echo "All done! Checking total count..."
+/opt/lampp/bin/mysql -u root exams -e "SELECT COUNT(*) as total_questions FROM questions;"

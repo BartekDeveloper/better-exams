@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo -e "Fresh copy of scrapers" &&
+mkdir -p ./model/data/inf_02 &&
+mkdir -p ./model/data/inf_03 &&
+mkdir -p ./model/data/inf_04 &&
+cp ./scripts/scrape.py ./model/data/inf_02/ &&
+cp ./scripts/scrape.py ./model/data/inf_03/ &&
+cp ./scripts/scrape.py ./model/data/inf_04/ &&
+cp ./scripts/requirements.txt ./model/data/inf_02/ &&
+cp ./scripts/requirements.txt ./model/data/inf_03/ &&
+cp ./scripts/requirements.txt ./model/data/inf_04/ &&
+echo -e "\n\t Finished copying all scrapers"

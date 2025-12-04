@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo "Fresh install\n" &
+./scripts/make_scrapers &&
+
+echo -e "Starting to scrape all data using Python\n" &&
+
+echo -e "\n\n\tInf.02\n" &&
+./scripts/scrape_inf02 &&
+
+echo -e "\n\n\tInf.03\n" &&
+./scripts/scrape_inf03 &&
+
+echo -e "\n\n\tInf.04\n" &&
+./scripts/scrape_inf04 &&
+
+echo "Finished Scraping all data"

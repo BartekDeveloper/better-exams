@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+cd ./model/data/inf_03/
+
+# Create venv only if it doesn't exist
+if [ ! -d "venv" ]; then
+    echo "Creating virtual environment..."
+    python3 -m venv venv
+fi
+
+# Install/update requirements (pip will skip already installed packages)
+./venv/bin/pip install -q -r requirements.txt
+
+# Run the scraper
+./venv/bin/python3 scrape.py
