@@ -242,6 +242,21 @@ def save_csv(rows, cat_map):
             pass 
             writer.writerow(row)
 
+
+CATEGORY_IMAGES = {
+    1: "html.jpg",
+    2: "css.jpg",
+    3: "js.jpg",
+    4: "php.jpg",
+    5: "sql.jpg",
+    6: "hardware.jpg",
+    7: "network.jpg",
+    8: "os.jpg",
+    9: "multimedia.jpg",
+    10: "algo.jpg",
+    11: "other.jpg"
+}
+
 def save_categories():
     qualification = get_qualification()
     base_id = get_base_id()
@@ -251,7 +266,7 @@ def save_categories():
     # Map Global ID -> New Local ID (Base + 1..N)
     cat_map = {}
     
-    fieldnames = ["id", "name", "qualification"]
+    fieldnames = ["id", "name", "qualification", "image"]
     with open(OUT_CATEGORIES_CSV, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=CSV_DELIMITER, lineterminator='\n')
         writer.writeheader()
@@ -262,7 +277,8 @@ def save_categories():
             writer.writerow({
                 "id": new_id,
                 "name": CATEGORIES[global_id],
-                "qualification": qualification
+                "qualification": qualification,
+                "image": CATEGORY_IMAGES.get(global_id, "default.jpg")
             })
             
     return cat_map

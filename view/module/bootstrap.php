@@ -2,7 +2,7 @@
 
 defined('LOCAL_PATH_BOOTSTRAP') || define("LOCAL_PATH_BOOTSTRAP", __DIR__);
 
-$_SERVER["DOCUMENT_ROOT"] .= "/better-exams";
+// $_SERVER["DOCUMENT_ROOT"] .= "/better-exams";
 
 // ---------------------------------------------------------------------------
 // DEFINE SEPERATOR ALIASES
@@ -92,8 +92,16 @@ define("PRODUCTION", false);
 define("PAGE_PATH_DEFAULT", URL_SEPARATOR . 'index');
 define("PAGE_PATH", (REQUEST_PATH_STRIP_QUERY === URL_SEPARATOR) ? PAGE_PATH_DEFAULT : REQUEST_PATH_STRIP_QUERY);
 
-define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
+define("ROOT", LOCAL_PATH_APP);
 define("HTTP_ROOT", isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : '_UNKNOWN_'));
-define("VIEW", ROOT."view/");
-define("CONTROLLER", ROOT."controller/");
-define("MODEL", ROOT."model/");
+define("VIEW", ROOT."/view");
+define("CONTROLLER", ROOT."/controller");
+define("MODEL", ROOT."/model");
+
+define("ASSET", REQUEST_PROTOCOL . HTTP_PATH_APP . "/view/assets");
+define("ASSET_IMG", ASSET . "/images");
+define("CSS", VIEW . "/css");
+define("JS", VIEW . "/js");
+
+
+define("MODULE", VIEW . "/module");

@@ -50,18 +50,31 @@ class Category {
     public int $id;
     public string $name;
     public string $qualification;
+    public string $image;
 
-    function __construct(int $id, string $name, string $qualification) {
+    function __construct(int $id, string $name, string $qualification, string $image) {
         $this->id = $id;
         $this->name = $name;
         $this->qualification = $qualification;
+        $this->image = $image;
+    }
+
+    static function FromRow(array $data): Category {
+        $self = new Category(
+            (int)$data[0],
+            (string)$data[1],
+            (string)$data[2],
+            (string)$data[3]
+        );
+        return $self;
     }
 
     static function Generate(): string {
         return "CREATE TABLE IF NOT EXISTS categories ("
             . "id INT PRIMARY KEY,"
             . "name VARCHAR(255) NOT NULL,"
-            . "qualification ENUM('INF.02', 'INF.03', 'INF.04') NOT NULL"
+            . "qualification ENUM('INF.02', 'INF.03', 'INF.04') NOT NULL,"
+            . "image VARCHAR(255) NOT NULL"
             . ")";
     }
 }

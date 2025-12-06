@@ -8,9 +8,9 @@ echo "Importing CSV files into database..."
 # Import categories
 echo "Importing Categories..."
 /opt/lampp/bin/mysql -u root exams --local-infile=1 -e "
-LOAD DATA LOCAL INFILE './model/data/inf_02/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (id, name, qualification);
-LOAD DATA LOCAL INFILE './model/data/inf_03/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (id, name, qualification);
-LOAD DATA LOCAL INFILE './model/data/inf_04/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (id, name, qualification);
+LOAD DATA LOCAL INFILE './model/data/inf_02/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (id, name, qualification, image);
+LOAD DATA LOCAL INFILE './model/data/inf_03/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (id, name, qualification, image);
+LOAD DATA LOCAL INFILE './model/data/inf_04/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (id, name, qualification, image);
 "
 
 # Import inf_02

@@ -1,12 +1,5 @@
-id;name;qualification
-101;HTML;INF.02
-102;CSS;INF.02
-103;JavaScript;INF.02
-104;PHP;INF.02
-105;SQL/Bazy Danych;INF.02
-106;Sprzęt;INF.02
-107;Sieci Komputerowe;INF.02
-108;Systemy Operacyjne;INF.02
-109;Grafika/Multimedia;INF.02
-110;Algorytmy/Programowanie;INF.02
-111;Inne;INF.02
+id;name;qualification;image
+101;Sprzęt;INF.02;hardware.jpg
+102;Sieci Komputerowe;INF.02;network.jpg
+103;Systemy Operacyjne;INF.02;os.jpg
+104;Inne;INF.02;other.jpg

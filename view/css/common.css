@@ -3,8 +3,8 @@
 }
 
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-Regular.ttf);
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-Regular.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-Regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -12,340 +12,410 @@
 
 
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-Italic.ttf);
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-Italic.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-Italic.otf") format("opentype");
     font-weight: normal;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-Bold.ttf);
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-Bold.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-Bold.otf") format("opentype");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-BoldItalic.ttf);
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-BoldItalic.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-BoldItalic.otf") format("opentype");
     font-weight: bold;
     font-style: italic;
     font-display: swap;
 }
 
-:root {
-    --dark-primary: hsla(50, 20%, 52%, 1);
-    --dark-secondary: hsla(50, 50%, 40%, 1);
-    --dark-tertiary: hsla(60, 80%, 30%, 1);
-
-    --dark-primary-bg: hsla(0, 0%, 2.5%, 1);
-    --dark-secondary-bg: hsla(0, 0%, 10%, 0.95);
-    --dark-tertiary-bg: hsla(0, 0%, 30%, 0.85);
-
-    --dark-success: hsla(120, 100%, 50%, 1);
-    --dark-correct: hsla(120, 100%, 50%, 1);
-    --dark-error: hsla(0, 100%, 50%, 1);
-    --dark-incorrect: hsla(0, 100%, 50%, 1);
-    --dark-danger: hsla(0, 100%, 50%, 1);
-    --dark-warning: hsla(60, 100%, 50%, 1);
-    --dark-info: hsla(180, 100%, 50%, 1);
-    
-    --dark-rounded-none: 0;
-    --dark-rounded-xs: 2px;
-    --dark-rounded-sm: 4px;    
-    --dark-rounded-md: 8px;
-    --dark-rounded-lg: 12px;
-    --dark-rounded-xl: 16px;
-    --dark-rounded-2xl: 24px;
-    --dark-rounded-3xl: 32px;
-    --dark-rounded-full: 100%;
-
-    --dark-shadow-sm: hsla(0, 0%, 0%, 0.25);
-    --dark-shadow-md: hsla(0, 0%, 0%, 0.5);
-    --dark-shadow-lg: hsla(0, 0%, 0%, 0.75);
-    --dark-shadow-xl: hsla(0, 0%, 0%, 1);
-
-    --dark-font-sans: 'OpenDyslexic', sans-serif;
-    --dark-font-mono: 'Fira Code', 'Courier New', monospace;
-    --dark-font-serif: 'Times New Roman', serif;
-    --dark-font-sans_serif: 'OpenDyslexic', sans-serif;
-
-    --dark-transition-fast: 150ms;
-    --dark-transition-medium: 300ms;
-    --dark-transition-slow: 500ms;
-    
-    --dark-ease-in: cubic-bezier(0.4, 0, 1, 1);
-    --dark-ease-out: cubic-bezier(0, 0, 0.2, 1);
-    --dark-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-    --dark-ease-elastic: cubic-bezier(0.4, 0.45, 0.2, 1.1);
-    --dark-ease-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
-    --dark-ease-bounce: cubic-bezier(0.5, 0, 0.6, 1);
-
-    --dark-duration-fast: 150ms;
-    --dark-duration-medium: 300ms;
-    --dark-duration-slow: 500ms;
-
-    --dark-spacing-none: 0;
-    --dark-spacing-xs: 0.25rem;
-    --dark-spacing-sm: 0.5rem;
-    --dark-spacing-md: 1rem;
-    --dark-spacing-lg: 1.5rem;
-    --dark-spacing-xl: 2rem;
-
-    --dark-size-none: 0;
-    --dark-size-xs: 0.25rem;
-    --dark-size-sm: 0.5rem;
-    --dark-size-md: 1rem;
-    --dark-size-lg: 1.5rem;
-
-    --dark-border-none: 0;
-    --dark-border-xs: 0.25rem;
-    --dark-border-sm: 0.5rem;
-    --dark-border-md: 1rem;
-    --dark-border-lg: 1.5rem;
+/* =========================================
+   1. FONTS & RESET
+   ========================================= */
+* {
+    box-sizing: border-box;
 }
+
+@font-face {
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-Regular.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-Italic.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-Italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-Bold.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: OpenDyslexic;
+    src: url("../fonts/OpenDyslexic-BoldItalic.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/opendyslexic@0.0.4/build/otf/OpenDyslexic-BoldItalic.otf") format("opentype");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* =========================================
+   2. VARIABLES (THEME & UTILITY)
+   ========================================= */
 
 :root {
-    --light-primary: hsla(50, 20%, 52%, 1);
-    --light-secondary: hsla(50, 50%, 40%, 1);
-    --light-tertiary: hsla(60, 80%, 30%, 1);
+    /* --- Colors: Cyan & Gold Theme --- */
+    --cyan-glow: #00f2ff;
+    --cyan-dim: #008c94;
+    --gold-glow: #ffd700;
+    --gold-dim: #b8860b;
+    --purple-deep: #1a0b2e;
+    --blue-night: #0f0518;
 
-    --light-primary-bg: hsla(0, 0%, 2.5%, 1);
-    --light-secondary-bg: hsla(0, 0%, 10%, 0.95);
-    --light-tertiary-bg: hsla(0, 0%, 30%, 0.85);
+    /* --- Spacing --- */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
 
-    --light-success: hsla(120, 100%, 50%, 1);
-    --light-correct: hsla(120, 100%, 50%, 1);
-    --light-error: hsla(0, 100%, 50%, 1);
-    --light-incorrect: hsla(0, 100%, 50%, 1);
-    --light-danger: hsla(0, 100%, 50%, 1);
-    --light-warning: hsla(60, 100%, 50%, 1);
-    --light-info: hsla(180, 100%, 50%, 1);
+    /* --- Borders & Radius --- */
+    --rounded-sm: 4px;
+    --rounded-md: 8px;
+    --rounded-lg: 12px;
+    --rounded-xl: 16px;
+    --rounded-2xl: 24px;
+    --rounded-full: 9999px;
+
+    /* --- Transitions --- */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* --- DARK THEME (DEFAULT) --- */
+    /* Background: Dark goldish/purplish/dark blue gradient */
+    --bg-gradient: linear-gradient(135deg, #050505 0%, #1a0b2e 40%, #1f1a00 100%);
+    --bg-animated: linear-gradient(270deg, #0f0518, #1a0b2e, #1f1a00, #0f0518);
     
-    --light-rounded-none: 0;
-    --light-rounded-xs: 2px;
-    --light-rounded-sm: 4px;    
-    --light-rounded-md: 8px;
-    --light-rounded-lg: 12px;    
-    --light-rounded-xl: 16px;
-    --light-rounded-2xl: 24px;
-    --light-rounded-3xl: 32px;
-    --light-rounded-full: 100%;
-
-    --light-shadow-sm: hsla(0, 0%, 0%, 0.25);
-    --light-shadow-md: hsla(0, 0%, 0%, 0.5);
-    --light-shadow-lg: hsla(0, 0%, 0%, 0.75);
-    --light-shadow-xl: hsla(0, 0%, 0%, 1);
-
-    --light-font-sans: 'OpenDyslexic', sans-serif;
-    --light-font-mono: 'Fira Code', 'Courier New', monospace;
-    --light-font-serif: 'Times New Roman', serif;
-    --light-font-sans_serif: 'OpenDyslexic', sans-serif;
-
-    --light-transition-fast: 150ms;
-    --light-transition-medium: 300ms;
-    --light-transition-slow: 500ms;
+    background: var(--bg-animated) !important;
+    min-height: 100%;
+    font-family: 'OpenDyslexic', sans-serif !important;
     
-    --light-ease-in: cubic-bezier(0.4, 0, 1, 1);
-    --light-ease-out: cubic-bezier(0, 0, 0.2, 1);
-    --light-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);                        
-    --light-ease-elastic: cubic-bezier(0.4, 0.45, 0.2, 1.1);
-    --light-ease-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
-    --light-ease-bounce: cubic-bezier(0.5, 0, 0.6, 1);
+    --text-main: #f0f0f0;
+    --text-muted: #aaaaaa;
 
-    --light-duration-fast: 150ms;
-    --light-duration-medium: 300ms;
-    --light-duration-slow: 500ms;
+    --glass-bg: rgba(20, 20, 30, 0.6); /* Darker for better contrast */
+    --glass-border: rgba(255, 215, 0, 0.2); /* Gold hint */
+    --glass-shine: rgba(255, 255, 255, 0.05);
+    
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 
-    --light-spacing-none: 0;
-    --light-spacing-xs: 0.25rem;
-    --light-spacing-sm: 0.5rem;
-    --light-spacing-md: 1rem;
-    --light-spacing-lg: 1.5rem;
-    --light-spacing-xl: 2rem;
-
-    --light-size-none: 0;
-    --light-size-xs: 0.25rem;
-    --light-size-sm: 0.5rem;
-    --light-size-md: 1rem;
-    --light-size-lg: 1.5rem;
-
-    --light-border-none: 0;
-    --light-border-xs: 0.25rem;
-    --light-border-sm: 0.5rem;
-    --light-border-md: 1rem;                        
-    --light-border-lg: 1.5rem;
+    /* --- Bootstrap Overrides (Global) --- */
+    --bs-font-sans-serif: 'OpenDyslexic', sans-serif;
+    --bs-body-font-family: 'OpenDyslexic', sans-serif;
+    
+    /* Force Bootstrap to use our Dark Theme colors by default */
+    --bs-body-color: var(--text-main);
+    --bs-body-bg: #0f0518; /* Fallback color */
+    --bs-primary: var(--gold-glow);
+    --bs-primary-rgb: 255, 215, 0;
+    --bs-secondary: var(--cyan-glow);
+    --bs-link-color: var(--cyan-glow);
+    --bs-link-hover-color: var(--gold-glow);
 }
 
-html {
-    --primary: var(--dark-primary);
-    --secondary: var(--dark-seconary);
-    --tertiary: var(--dark-tertiary);
+/* --- LIGHT THEME (Only if class present) --- */
+:root.light {
+    /* Background: Cyan-like light blue mixed with Golden */
+    --bg-gradient: linear-gradient(135deg, #e0f7fa 0%, #fff8e1 100%);
+    --bg-animated: linear-gradient(270deg, #e0f7fa, #fffde7, #e1f5fe, #e0f7fa);
 
-    --primary-bg: var(--dark-primary-bg);
-    --secondary-bg: var(--dark-secondary-bg);
-    --tertiary-bg: var(--dark-tertiary-bg);
+    --text-main: #000000; /* Pure black for maximum contrast */
+    --text-muted: #2d2d2d; /* Very dark grey */
 
-    --success: var(--dark-success);
-    --correct: var(--dark-correct);
-    --error: var(--dark-error);
-    --incorrect: var(--dark-incorrect);
-    --danger: var(--dark-danger);
-    --warning: var(--dark-warning);
-    --info: var(--dark-info);
-    
-    --rounded-none: 0;
-    --rounded-xs: var(--dark-rounded-xs);
-    --rounded-sm: var(--dark-rounded-sm);
-    --rounded-md: var(--dark-rounded-md);
-    --rounded-lg: var(--dark-rounded-lg);
-    --rounded-xl: var(--dark-rounded-xl);
-    --rounded-2xl: var(--dark-rounded-2xl);
-    --rounded-3xl: var(--dark-rounded-3xl);
-    --rounded-full: 100%;
+    --glass-bg: rgba(255, 255, 255, 0.9); /* Very opaque for readability */
+    --glass-border: rgba(0, 0, 0, 0.2); /* Dark border */
+    --glass-shine: rgba(255, 255, 255, 0.4);
 
-    --shadow-sm: var(--dark-shadow-sm);
-    --shadow-md: var(--dark-shadow-md);
-    --shadow-lg: var(--dark-shadow-lg);
-    --shadow-xl: var(--dark-shadow-xl);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 
-    --font-sans: var(--dark-font-sans);
-    --font-mono: var(--dark-font-mono);
-    --font-serif: var(--dark-font-serif);
-    --font-sans_serif: var(--dark-font-sans_serif);
-
-    --transition-fast: var(--dark-transition-fast);
-    --transition-medium: var(--dark-transition-medium);
-    --transition-slow: var(--dark-transition-slow);
-    
-    --ease-in: var(--dark-ease-in);
-    --ease-out: var(--dark-ease-out);
-    --ease-in-out: var(--dark-ease-in-out);
-    --ease-elastic: var(--dark-ease-elastic);
-    --ease-back: var(--dark-ease-back);
-    --ease-bounce: var(--dark-ease-bounce);
-
-    --duration-fast: var(--dark-duration-fast);
-    --duration-medium: var(--dark-duration-medium);
-    --duration-slow: var(--dark-duration-slow);
-
-    --spacing-none: 0;
-    --spacing-xs: var(--dark-spacing-xs);
-    --spacing-sm: var(--dark-spacing-sm);
-    --spacing-md: var(--dark-spacing-md);
-    --spacing-lg: var(--dark-spacing-lg);
-    --spacing-xl: var(--dark-spacing-xl);
-
-    --size-none: 0;
-    --size-xs: var(--dark-size-xs);
-    --size-sm: var(--dark-size-sm);
-    --size-md: var(--dark-size-md);
-    --size-lg: var(--dark-size-lg);
-
-    --border-none: 0;
-    --border-xs: var(--dark-border-xs);
-    --border-sm: var(--dark-border-sm);
-    --border-md: var(--dark-border-md); 
-    --border-lg: var(--dark-border-lg);
+    /* Bootstrap Mappings */
+    --bs-body-color: #000000;
+    --bs-body-bg: #f8f9fa;
+    --bs-primary: #6b4700; /* Very dark gold */
+    --bs-primary-rgb: 107, 71, 0;
+    --bs-secondary: #004d54; /* Very dark cyan */
+    --bs-link-color: #003d40; /* Even darker cyan for links */
+    --bs-link-hover-color: #4d3200; /* Dark gold on hover */
 }
 
-html:has(.light) {
-    --primary: var(--light-primary);
-    --secondary: var(--light-secondary);
-    --tertiary: var(--light-tertiary);
-
-    --primary-bg: var(--light-primary-bg);
-    --secondary-bg: var(--light-secondary-bg);
-    --tertiary-bg: var(--light-tertiary-bg);
-
-    --success: var(--light-success);
-    --correct: var(--light-correct);
-    --error: var(--light-error);
-    --incorrect: var(--light-incorrect);
-    --danger: var(--light-danger);
-    --warning: var(--light-warning);
-    --info: var(--light-info);
-    
-    --rounded-none: 0;
-    --rounded-xs: var(--light-rounded-xs);
-    --rounded-sm: var(--light-rounded-sm);
-    --rounded-md: var(--light-rounded-md);
-    --rounded-lg: var(--light-rounded-lg);
-    --rounded-xl: var(--light-rounded-xl);
-    --rounded-2xl: var(--light-rounded-2xl);
-    --rounded-3xl: var(--light-rounded-3xl);
-    --rounded-full: 100%;
-
-    --shadow-sm: var(--light-shadow-sm);
-    --shadow-md: var(--light-shadow-md);
-    --shadow-lg: var(--light-shadow-lg);
-    --shadow-xl: var(--light-shadow-xl);
-
-    --font-sans: var(--light-font-sans);
-    --font-mono: var(--light-font-mono);
-    --font-serif: var(--light-font-serif);
-    --font-sans_serif: var(--light-font-sans_serif);
-
-    --transition-fast: var(--light-transition-fast);
-    --transition-medium: var(--light-transition-medium);
-    --transition-slow: var(--light-transition-slow);
-    
-    --ease-in: var(--light-ease-in);
-    --ease-out: var(--light-ease-out);
-    --ease-in-out: var(--light-ease-in-out);
-    --ease-elastic: var(--light-ease-elastic);
-    --ease-back: var(--light-ease-back);
-    --ease-bounce: var(--light-ease-bounce);
-
-    --duration-fast: var(--light-duration-fast);
-    --duration-medium: var(--light-duration-medium);
-    --duration-slow: var(--light-duration-slow);
-
-    --spacing-none: 0;
-    --spacing-xs: var(--light-spacing-xs);
-    --spacing-sm: var(--light-spacing-sm);
-    --spacing-md: var(--light-spacing-md);
-    --spacing-lg: var(--light-spacing-lg);
-    --spacing-xl: var(--light-spacing-xl);
-
-    --size-none: 0;
-    --size-xs: var(--light-size-xs);
-    --size-sm: var(--light-size-sm);
-    --size-md: var(--light-size-md);
-    --size-lg: var(--light-size-lg);
-
-    --border-none: 0;
-    --border-xs: var(--light-border-xs);
-    --border-sm: var(--light-border-sm);
-    --border-md: var(--light-border-md);                        
-    --border-lg: var(--light-border-lg);
+/* Light theme specific overrides */
+:root.light .card-title {
+    color: #5a3c00 !important; /* Very dark gold for card titles - MAX CONTRAST */
 }
 
-html {
-    font-family: var(--font-sans);
-    background-color: var(--primary-bg);
-    color: var(--primary);
+:root.light .card-text {
+    color: #1a1a1a !important; /* Nearly black for card text */
 }
+
+:root.light .hero-section .text-muted {
+    color: #2d2d2d !important; /* Very dark grey for subtitle */
+}
+
+:root.light .glass {
+    background: rgba(255, 255, 255, 0.95); /* Nearly opaque */
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   3. BASE STYLES & ANIMATIONS
+   ========================================= */
 
 body {
-    margin: 0;
-    padding: 0;
+    background: var(--bg-animated) !important;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    font-family: 'OpenDyslexic', sans-serif !important;
+    padding-top: 100px; /* Space for sticky header */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    background: linear-gradient(to right, var(--gold-glow), var(--cyan-glow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Better visibility */
+}
+
+html:has(.light) h1 {
+    background: linear-gradient(to right, #b8860b, #008c94);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: none;
 }
 
 a {
-    color: transparent;    
-    -webkit-text-fill-color: transparent;
-    
-    background-clip: text;
-    -webkit-background-clip: text;
-
-    background: linear-gradient(45deg, color-mix(in hsl, var(--primary) 50%, goldenrod), color-mix(in hsl, var(--primary) 50%, gold));
-
-    text-decoration: none;
+    transition: all var(--transition-fast);
 }
 
-a:hover {
-    text-decoration: underline;
+/* =========================================
+   4. HEADER & NAVIGATION
+   ========================================= */
+/* =========================================
+   4. HEADER & NAVIGATION
+   ========================================= */
+/* =========================================
+   4. HEADER & NAVIGATION
+   ========================================= */
+#main-nav {
+    position: sticky;
+    top: 20px; /* Stick 20px from top */
+    margin: 0 auto; /* Center horizontally */
+    width: 95%; /* Mobile default */
+    max-width: 1200px;
+    z-index: 1000;
+    padding: var(--spacing-sm) var(--spacing-md);
+    
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--rounded-2xl);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    
+    /* Animation on stick is tricky with pure CSS, 
+       but sticky itself handles the positioning logic */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Desktop Width */
+@media (min-width: 992px) {
+    #main-nav {
+        width: 70%;
+    }
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffd700, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none !important; /* Force no underline */
+    padding: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding-right: var(--spacing-xs); /* Space from border */
+}
+
+.nav-item {
+    color: var(--text-main);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem; /* Bigger touch target */
+    margin: 0.25rem; /* Space between buttons */
+    border-radius: var(--rounded-full);
+    transition: all var(--transition-fast);
+    text-decoration: none !important; /* Force no underline */
+    border: 1px solid transparent; /* Prevent layout shift on hover */
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--gold-glow);
+    border-color: var(--glass-border);
+    box-shadow: 0 0 15px var(--glass-shine);
+}
+
+/* Hero Section (Static Page Title) */
+.hero-section {
+    margin-top: 40px; /* Space below sticky nav */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    /* Improved Gradient */
+    background: linear-gradient(135deg, var(--gold-glow) 0%, #ffffff 50%, var(--cyan-glow) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+.hero-section .text-muted {
+    color: #b0b0b0 !important; /* Override Bootstrap's dark .text-muted with light grey */
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* =========================================
+   5. GLASSMORPHISM & COMPONENTS
+   ========================================= */
+.glass {
+    background: rgba(30, 30, 40, 0.8); /* Much darker background for cards */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--rounded-xl);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+/* Glossy Shine Effect */
+.glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, var(--glass-shine) 0%, transparent 100%);
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Hover Lift */
+.glass:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+    border-color: var(--cyan-glow);
+}
+
+/* Bootstrap Card Overrides */
+.card {
+    background: transparent;
+    border: none;
+}
+
+.card-body {
+    color: var(--text-main); /* Ensure text is light */
+}
+
+.card-title {
+    color: var(--gold-glow);
+    font-weight: bold;
+}
+
+.card-text {
+    color: #cccccc !important; /* Force light grey for muted text */
+}
+
+.card-img-top {
+    border-top-left-radius: var(--rounded-xl);
+    border-top-right-radius: var(--rounded-xl);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--gold-glow), var(--gold-dim));
+    border: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: var(--rounded-full);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    transition: all var(--transition-medium);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, var(--cyan-glow), var(--cyan-dim));
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 242, 255, 0.4);
+    color: #000;
+}
+
+/* =========================================
+   6. UTILITIES
+   ========================================= */
+.text-gradient {
+    background: linear-gradient(45deg, var(--gold-glow), var(--cyan-glow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

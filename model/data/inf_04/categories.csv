@@ -1,12 +1,6 @@
-id;name;qualification
-301;HTML;INF.04
-302;CSS;INF.04
-303;JavaScript;INF.04
-304;PHP;INF.04
-305;SQL/Bazy Danych;INF.04
-306;Sprzęt;INF.04
-307;Sieci Komputerowe;INF.04
-308;Systemy Operacyjne;INF.04
-309;Grafika/Multimedia;INF.04
-310;Algorytmy/Programowanie;INF.04
-311;Inne;INF.04
+id;name;qualification;image
+301;JavaScript;INF.04;js.jpg
+302;PHP;INF.04;php.jpg
+303;SQL/Bazy Danych;INF.04;sql.jpg
+304;Algorytmy/Programowanie;INF.04;algo.jpg
+305;Inne;INF.04;other.jpg
