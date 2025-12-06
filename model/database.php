@@ -30,18 +30,6 @@ class Database {
         return self::$connection->query($sql);
     }
 
-    static public function FetchNext_Array(mysqli_result $result): array|null|false {
-        return $array = mysqli_fetch_array($result);
-    } 
-
-    static public function FetchNext_Assoc(mysqli_result $result): array|null|false {
-        return $array = mysqli_fetch_assoc($result);
-    }
-
-    static public function FetchNext_Numeric(mysqli_result $result): array|null|false {
-        return $array = mysqli_fetch_row($result);
-    }
-
     public function __construct() {
         self::Connect();
     }

@@ -40,7 +40,7 @@
 
             $result = Database::Query("SELECT DISTINCT category_name FROM questions;");
             
-            while($row = Database::FetchNext_Numeric($result)) {
+            while($row = mysqli_fetch_array($result)) {
                 echo SelectExamType($row[0]);
             }
             ?>

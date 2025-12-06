@@ -1,17 +1,20 @@
 <?php
 
+include MODEL."tables.php";
+use Category;
+
 function SelectExamType(
-    string $examType
+    Category $data
 ): string {
     global $db;
         
     return <<<HTML
         <section>
             <div>
-                <img src="" alt="" onerror="alert('Brak obrazka')">
-                <h2><?= $examType ?></h2>
+                <img src="{$data->name}" alt="{$data->name}" />
+                <h2>{$data->name}</h2>
             </div>
-            <a>Sprawdź swoją wiedzę</a>
+            <a href="{$data->name}">Sprawdź swoją wiedzę</a>
         </section>
     HTML;
 }

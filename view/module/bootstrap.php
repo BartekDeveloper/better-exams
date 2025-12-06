@@ -94,3 +94,6 @@ define("PAGE_PATH", (REQUEST_PATH_STRIP_QUERY === URL_SEPARATOR) ? PAGE_PATH_DEF
 
 define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 define("HTTP_ROOT", isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : '_UNKNOWN_'));
+define("VIEW", ROOT."view/");
+define("CONTROLLER", ROOT."controller/");
+define("MODEL", ROOT."model/");

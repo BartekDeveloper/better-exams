@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-Italic.ttf);
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url(https://cdn.jsdelivr.net/gh/googlefonts/noto-fonts@master/phaseIII_only/hinted/OpenDyslexic-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --dark-primary: hsla(50, 20%, 52%, 1);
+    --dark-secondary: hsla(50, 50%, 40%, 1);
+    --dark-tertiary: hsla(60, 80%, 30%, 1);
+
+    --dark-primary-bg: hsla(0, 0%, 2.5%, 1);
+    --dark-secondary-bg: hsla(0, 0%, 10%, 0.95);
+    --dark-tertiary-bg: hsla(0, 0%, 30%, 0.85);
+
+    --dark-success: hsla(120, 100%, 50%, 1);
+    --dark-correct: hsla(120, 100%, 50%, 1);
+    --dark-error: hsla(0, 100%, 50%, 1);
+    --dark-incorrect: hsla(0, 100%, 50%, 1);
+    --dark-danger: hsla(0, 100%, 50%, 1);
+    --dark-warning: hsla(60, 100%, 50%, 1);
+    --dark-info: hsla(180, 100%, 50%, 1);
+    
+    --dark-rounded-none: 0;
+    --dark-rounded-xs: 2px;
+    --dark-rounded-sm: 4px;    
+    --dark-rounded-md: 8px;
+    --dark-rounded-lg: 12px;
+    --dark-rounded-xl: 16px;
+    --dark-rounded-2xl: 24px;
+    --dark-rounded-3xl: 32px;
+    --dark-rounded-full: 100%;
+
+    --dark-shadow-sm: hsla(0, 0%, 0%, 0.25);
+    --dark-shadow-md: hsla(0, 0%, 0%, 0.5);
+    --dark-shadow-lg: hsla(0, 0%, 0%, 0.75);
+    --dark-shadow-xl: hsla(0, 0%, 0%, 1);
+
+    --dark-font-sans: 'OpenDyslexic', sans-serif;
+    --dark-font-mono: 'Fira Code', 'Courier New', monospace;
+    --dark-font-serif: 'Times New Roman', serif;
+    --dark-font-sans_serif: 'OpenDyslexic', sans-serif;
+
+    --dark-transition-fast: 150ms;
+    --dark-transition-medium: 300ms;
+    --dark-transition-slow: 500ms;
+    
+    --dark-ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --dark-ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --dark-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --dark-ease-elastic: cubic-bezier(0.4, 0.45, 0.2, 1.1);
+    --dark-ease-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+    --dark-ease-bounce: cubic-bezier(0.5, 0, 0.6, 1);
+
+    --dark-duration-fast: 150ms;
+    --dark-duration-medium: 300ms;
+    --dark-duration-slow: 500ms;
+
+    --dark-spacing-none: 0;
+    --dark-spacing-xs: 0.25rem;
+    --dark-spacing-sm: 0.5rem;
+    --dark-spacing-md: 1rem;
+    --dark-spacing-lg: 1.5rem;
+    --dark-spacing-xl: 2rem;
+
+    --dark-size-none: 0;
+    --dark-size-xs: 0.25rem;
+    --dark-size-sm: 0.5rem;
+    --dark-size-md: 1rem;
+    --dark-size-lg: 1.5rem;
+
+    --dark-border-none: 0;
+    --dark-border-xs: 0.25rem;
+    --dark-border-sm: 0.5rem;
+    --dark-border-md: 1rem;
+    --dark-border-lg: 1.5rem;
+}
+
+:root {
+    --light-primary: hsla(50, 20%, 52%, 1);
+    --light-secondary: hsla(50, 50%, 40%, 1);
+    --light-tertiary: hsla(60, 80%, 30%, 1);
+
+    --light-primary-bg: hsla(0, 0%, 2.5%, 1);
+    --light-secondary-bg: hsla(0, 0%, 10%, 0.95);
+    --light-tertiary-bg: hsla(0, 0%, 30%, 0.85);
+
+    --light-success: hsla(120, 100%, 50%, 1);
+    --light-correct: hsla(120, 100%, 50%, 1);
+    --light-error: hsla(0, 100%, 50%, 1);
+    --light-incorrect: hsla(0, 100%, 50%, 1);
+    --light-danger: hsla(0, 100%, 50%, 1);
+    --light-warning: hsla(60, 100%, 50%, 1);
+    --light-info: hsla(180, 100%, 50%, 1);
+    
+    --light-rounded-none: 0;
+    --light-rounded-xs: 2px;
+    --light-rounded-sm: 4px;    
+    --light-rounded-md: 8px;
+    --light-rounded-lg: 12px;    
+    --light-rounded-xl: 16px;
+    --light-rounded-2xl: 24px;
+    --light-rounded-3xl: 32px;
+    --light-rounded-full: 100%;
+
+    --light-shadow-sm: hsla(0, 0%, 0%, 0.25);
+    --light-shadow-md: hsla(0, 0%, 0%, 0.5);
+    --light-shadow-lg: hsla(0, 0%, 0%, 0.75);
+    --light-shadow-xl: hsla(0, 0%, 0%, 1);
+
+    --light-font-sans: 'OpenDyslexic', sans-serif;
+    --light-font-mono: 'Fira Code', 'Courier New', monospace;
+    --light-font-serif: 'Times New Roman', serif;
+    --light-font-sans_serif: 'OpenDyslexic', sans-serif;
+
+    --light-transition-fast: 150ms;
+    --light-transition-medium: 300ms;
+    --light-transition-slow: 500ms;
+    
+    --light-ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --light-ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --light-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);                        
+    --light-ease-elastic: cubic-bezier(0.4, 0.45, 0.2, 1.1);
+    --light-ease-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+    --light-ease-bounce: cubic-bezier(0.5, 0, 0.6, 1);
+
+    --light-duration-fast: 150ms;
+    --light-duration-medium: 300ms;
+    --light-duration-slow: 500ms;
+
+    --light-spacing-none: 0;
+    --light-spacing-xs: 0.25rem;
+    --light-spacing-sm: 0.5rem;
+    --light-spacing-md: 1rem;
+    --light-spacing-lg: 1.5rem;
+    --light-spacing-xl: 2rem;
+
+    --light-size-none: 0;
+    --light-size-xs: 0.25rem;
+    --light-size-sm: 0.5rem;
+    --light-size-md: 1rem;
+    --light-size-lg: 1.5rem;
+
+    --light-border-none: 0;
+    --light-border-xs: 0.25rem;
+    --light-border-sm: 0.5rem;
+    --light-border-md: 1rem;                        
+    --light-border-lg: 1.5rem;
+}
+
+html {
+    --primary: var(--dark-primary);
+    --secondary: var(--dark-seconary);
+    --tertiary: var(--dark-tertiary);
+
+    --primary-bg: var(--dark-primary-bg);
+    --secondary-bg: var(--dark-secondary-bg);
+    --tertiary-bg: var(--dark-tertiary-bg);
+
+    --success: var(--dark-success);
+    --correct: var(--dark-correct);
+    --error: var(--dark-error);
+    --incorrect: var(--dark-incorrect);
+    --danger: var(--dark-danger);
+    --warning: var(--dark-warning);
+    --info: var(--dark-info);
+    
+    --rounded-none: 0;
+    --rounded-xs: var(--dark-rounded-xs);
+    --rounded-sm: var(--dark-rounded-sm);
+    --rounded-md: var(--dark-rounded-md);
+    --rounded-lg: var(--dark-rounded-lg);
+    --rounded-xl: var(--dark-rounded-xl);
+    --rounded-2xl: var(--dark-rounded-2xl);
+    --rounded-3xl: var(--dark-rounded-3xl);
+    --rounded-full: 100%;
+
+    --shadow-sm: var(--dark-shadow-sm);
+    --shadow-md: var(--dark-shadow-md);
+    --shadow-lg: var(--dark-shadow-lg);
+    --shadow-xl: var(--dark-shadow-xl);
+
+    --font-sans: var(--dark-font-sans);
+    --font-mono: var(--dark-font-mono);
+    --font-serif: var(--dark-font-serif);
+    --font-sans_serif: var(--dark-font-sans_serif);
+
+    --transition-fast: var(--dark-transition-fast);
+    --transition-medium: var(--dark-transition-medium);
+    --transition-slow: var(--dark-transition-slow);
+    
+    --ease-in: var(--dark-ease-in);
+    --ease-out: var(--dark-ease-out);
+    --ease-in-out: var(--dark-ease-in-out);
+    --ease-elastic: var(--dark-ease-elastic);
+    --ease-back: var(--dark-ease-back);
+    --ease-bounce: var(--dark-ease-bounce);
+
+    --duration-fast: var(--dark-duration-fast);
+    --duration-medium: var(--dark-duration-medium);
+    --duration-slow: var(--dark-duration-slow);
+
+    --spacing-none: 0;
+    --spacing-xs: var(--dark-spacing-xs);
+    --spacing-sm: var(--dark-spacing-sm);
+    --spacing-md: var(--dark-spacing-md);
+    --spacing-lg: var(--dark-spacing-lg);
+    --spacing-xl: var(--dark-spacing-xl);
+
+    --size-none: 0;
+    --size-xs: var(--dark-size-xs);
+    --size-sm: var(--dark-size-sm);
+    --size-md: var(--dark-size-md);
+    --size-lg: var(--dark-size-lg);
+
+    --border-none: 0;
+    --border-xs: var(--dark-border-xs);
+    --border-sm: var(--dark-border-sm);
+    --border-md: var(--dark-border-md); 
+    --border-lg: var(--dark-border-lg);
+}
+
+html:has(.light) {
+    --primary: var(--light-primary);
+    --secondary: var(--light-secondary);
+    --tertiary: var(--light-tertiary);
+
+    --primary-bg: var(--light-primary-bg);
+    --secondary-bg: var(--light-secondary-bg);
+    --tertiary-bg: var(--light-tertiary-bg);
+
+    --success: var(--light-success);
+    --correct: var(--light-correct);
+    --error: var(--light-error);
+    --incorrect: var(--light-incorrect);
+    --danger: var(--light-danger);
+    --warning: var(--light-warning);
+    --info: var(--light-info);
+    
+    --rounded-none: 0;
+    --rounded-xs: var(--light-rounded-xs);
+    --rounded-sm: var(--light-rounded-sm);
+    --rounded-md: var(--light-rounded-md);
+    --rounded-lg: var(--light-rounded-lg);
+    --rounded-xl: var(--light-rounded-xl);
+    --rounded-2xl: var(--light-rounded-2xl);
+    --rounded-3xl: var(--light-rounded-3xl);
+    --rounded-full: 100%;
+
+    --shadow-sm: var(--light-shadow-sm);
+    --shadow-md: var(--light-shadow-md);
+    --shadow-lg: var(--light-shadow-lg);
+    --shadow-xl: var(--light-shadow-xl);
+
+    --font-sans: var(--light-font-sans);
+    --font-mono: var(--light-font-mono);
+    --font-serif: var(--light-font-serif);
+    --font-sans_serif: var(--light-font-sans_serif);
+
+    --transition-fast: var(--light-transition-fast);
+    --transition-medium: var(--light-transition-medium);
+    --transition-slow: var(--light-transition-slow);
+    
+    --ease-in: var(--light-ease-in);
+    --ease-out: var(--light-ease-out);
+    --ease-in-out: var(--light-ease-in-out);
+    --ease-elastic: var(--light-ease-elastic);
+    --ease-back: var(--light-ease-back);
+    --ease-bounce: var(--light-ease-bounce);
+
+    --duration-fast: var(--light-duration-fast);
+    --duration-medium: var(--light-duration-medium);
+    --duration-slow: var(--light-duration-slow);
+
+    --spacing-none: 0;
+    --spacing-xs: var(--light-spacing-xs);
+    --spacing-sm: var(--light-spacing-sm);
+    --spacing-md: var(--light-spacing-md);
+    --spacing-lg: var(--light-spacing-lg);
+    --spacing-xl: var(--light-spacing-xl);
+
+    --size-none: 0;
+    --size-xs: var(--light-size-xs);
+    --size-sm: var(--light-size-sm);
+    --size-md: var(--light-size-md);
+    --size-lg: var(--light-size-lg);
+
+    --border-none: 0;
+    --border-xs: var(--light-border-xs);
+    --border-sm: var(--light-border-sm);
+    --border-md: var(--light-border-md);                        
+    --border-lg: var(--light-border-lg);
+}
+
+html {
+    font-family: var(--font-sans);
+    background-color: var(--primary-bg);
+    color: var(--primary);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: transparent;    
+    -webkit-text-fill-color: transparent;
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    background: linear-gradient(45deg, color-mix(in hsl, var(--primary) 50%, goldenrod), color-mix(in hsl, var(--primary) 50%, gold));
+
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

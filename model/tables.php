@@ -46,6 +46,26 @@ class User {
     }
 };
 
+class Category {
+    public int $id;
+    public string $name;
+    public string $qualification;
+
+    function __construct(int $id, string $name, string $qualification) {
+        $this->id = $id;
+        $this->name = $name;
+        $this->qualification = $qualification;
+    }
+
+    static function Generate(): string {
+        return "CREATE TABLE IF NOT EXISTS categories ("
+            . "id INT PRIMARY KEY,"
+            . "name VARCHAR(255) NOT NULL,"
+            . "qualification ENUM('INF.02', 'INF.03', 'INF.04') NOT NULL"
+            . ")";
+    }
+}
+
 class Question {
     public int $id;
     public int $question_id;
@@ -57,9 +77,12 @@ class Question {
     public string $correct;
     public string $image;
     public string $image_fallback;
-    public string $category_name;
+    public int $category_id;
 
-    function __construct(int $id, int $question_id, string $question, string $a, string $b, string $c, string $d, string $correct, string $image, string $image_fallback, string $category_name) {
+    function __construct(
+        int $id, int $question_id, string $question, string $a, string $b, string $c, string $d, 
+        string $correct, string $image, string $image_fallback, int $category_id
+    ) {
         $this->id = $id;
         $this->question_id = $question_id;
         $this->question = $question;
@@ -70,7 +93,7 @@ class Question {
         $this->correct = $correct;
         $this->image = $image;
         $this->image_fallback = $image_fallback;
-        $this->category_name = $category_name;
+        $this->category_id = $category_id;
     }
 
     function Get(): string {
@@ -79,7 +102,7 @@ class Question {
 
     function Set(): string {
         return "INSERT INTO questions ("
-            . "question_id, question, a, b, c, d, correct, image, image_fallback, category_name)"
+            . "question_id, question, a, b, c, d, correct, image, image_fallback, category_id)"
             . "VALUES ("
             . "" . $this->question_id . ","
             . "'" . $this->question . "',"
@@ -90,7 +113,7 @@ class Question {
             . "'" . $this->correct . "',"
             . "'" . $this->image . "',"
             . "'" . $this->image_fallback . "',"
-            . "'" . $this->category_name . "')";
+            . "" . $this->category_id . ")";
     }
 
     static function Generate(): string {
@@ -105,7 +128,8 @@ class Question {
             . "correct VARCHAR(255) NOT NULL,"
             . "image VARCHAR(2048) NOT NULL,"
             . "image_fallback VARCHAR(2048) NOT NULL,"
-            . "category_name VARCHAR(255) NOT NULL"
+            . "category_id INT,"
+            . "FOREIGN KEY (category_id) REFERENCES categories(id)"
             . ")";
     }
 };
@@ -114,6 +138,8 @@ function GenerateSQL_Code(): string {
    (string)$sql = "";
    
    $sql .= User::Generate();
+   $sql .= ";\n\n";
+   $sql .= Category::Generate();
    $sql .= ";\n\n";
    $sql .= Question::Generate();
    $sql .= ";\n\n";
