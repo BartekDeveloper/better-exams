@@ -20,7 +20,8 @@ define("HTTP_PATH_ROOT", isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : 
 // DEFINE RELATIVE PATHS
 // ---------------------------------------------------------------------------
 define("RELATIVE_PATH_BASE", str_replace(LOCAL_PATH_ROOT, RELATIVE_PATH_ROOT, getcwd()));
-define("RELATIVE_PATH_APP", dirname(RELATIVE_PATH_BASE));
+$relativeBootstrapParent = str_replace(LOCAL_PATH_ROOT, RELATIVE_PATH_ROOT, dirname(LOCAL_PATH_BOOTSTRAP));
+define("RELATIVE_PATH_APP", dirname($relativeBootstrapParent));
 define("RELATIVE_PATH_LIBRARY", RELATIVE_PATH_APP . DIRECTORY_SEPARATOR . 'vendor');
 define("RELATIVE_PATH_HELPERS", RELATIVE_PATH_BASE);
 define("RELATIVE_PATH_TEMPLATE", RELATIVE_PATH_BASE . DIRECTORY_SEPARATOR . 'templates');
