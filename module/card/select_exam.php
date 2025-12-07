@@ -6,10 +6,10 @@ function Select_Exam_Category(
     global $db;
         
     (string)$image = "https://placehold.co/600x400/555/CCC?text=Kategoria%20{$data->name}";
-    (string)$link = RELATIVE_PATH_APP . "/view/error?code=404";
+    (string)$link = RELATIVE_PATH_APP . "/error?code=404";
 
     if(!empty($data->name)) {
-        $link = RELATIVE_PATH_APP . "/view/category?name=" . CleanLink($data->name);
+        $link = RELATIVE_PATH_APP . "/category?name=" . CleanLink($data->name);
     }
 
     $imageEscaped = htmlspecialchars($image, ENT_QUOTES, 'UTF-8');
@@ -36,10 +36,10 @@ function Select_Exam_Whole(string $qualification): string {
     global $db;
 
     (string)$image = "https://placehold.co/600x400/111/EEE?text=Egzamin%20{$qualification}";
-    (string)$link = RELATIVE_PATH_APP . "/view/error?code=404";
+    (string)$link = RELATIVE_PATH_APP . "/error?code=404";
 
     if(!empty($qualification)) {
-        $link = RELATIVE_PATH_APP . "/view/qualification?name=" . CleanLink($qualification);
+        $link = RELATIVE_PATH_APP . "/qualification?name=" . CleanLink($qualification);
     }
 
     $imageEscaped = htmlspecialchars($image, ENT_QUOTES, 'UTF-8');

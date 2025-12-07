@@ -1,7 +1,7 @@
 <?php
 function Select_Question_Count_Card(int $count, string $name, string $scope = 'category'): string {
     $encodedName = urlencode($name);
-    $link = RELATIVE_PATH_APP . "/view/exam?{$scope}={$encodedName}&count={$count}";
+    $link = RELATIVE_PATH_APP . "/exam?{$scope}={$encodedName}&count={$count}";
     $linkEscaped = htmlspecialchars($link, ENT_QUOTES, 'UTF-8');
     $countEscaped = htmlspecialchars((string)$count, ENT_QUOTES, 'UTF-8');
     return <<<HTML

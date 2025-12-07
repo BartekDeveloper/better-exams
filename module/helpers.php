@@ -17,9 +17,9 @@ if (!function_exists('AppHomePath')) {
     function AppHomePath(): string {
         $normalized = trim(RELATIVE_PATH_APP, '/\\');
         if ($normalized === '') {
-            return '/view/index.php';
+            return '/index.php';
         }
-        return '/' . $normalized . '/view/index.php';
+        return '/' . $normalized . '/index.php';
     }
 }
 

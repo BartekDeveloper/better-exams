@@ -5,7 +5,7 @@ if (!defined('RELATIVE_PATH_APP')) {
     define('RELATIVE_PATH_APP', '/better-exams');
 }
 
-require_once __DIR__ . '/../view/module/helpers.php';
+require_once __DIR__ . '/../module/helpers.php';
 
 final class TestFailure extends Exception {}
 
@@ -31,7 +31,7 @@ $tests = [
         assertSameValue('ala-ma-kota', CleanLink('Ala--- ma___kota??'), 'CleanLink should collapse duplicate separators');
     },
     'app_home_path_uses_relative_app' => function (): void {
-        assertSameValue('/better-exams/view/index.php', AppHomePath(), 'AppHomePath should target the application home');
+        assertSameValue('/better-exams/index.php', AppHomePath(), 'AppHomePath should target the application home');
     },
 ];
 

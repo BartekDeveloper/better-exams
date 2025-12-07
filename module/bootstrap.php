@@ -19,15 +19,21 @@ define("HTTP_PATH_ROOT", isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : 
 // ---------------------------------------------------------------------------
 // DEFINE RELATIVE PATHS
 // ---------------------------------------------------------------------------
-define("RELATIVE_PATH_BASE", str_replace(LOCAL_PATH_ROOT, RELATIVE_PATH_ROOT, getcwd()));
-$relativeBootstrapParent = str_replace(LOCAL_PATH_ROOT, RELATIVE_PATH_ROOT, dirname(LOCAL_PATH_BOOTSTRAP));
-define("RELATIVE_PATH_APP", dirname($relativeBootstrapParent));
+$localPathApp = realpath(dirname(__DIR__));
+if ($localPathApp === false) {
+    $localPathApp = dirname(__DIR__);
+}
+
+define("LOCAL_PATH_APP", $localPathApp);
+define("RELATIVE_PATH_APP", str_replace(LOCAL_PATH_ROOT, RELATIVE_PATH_ROOT, LOCAL_PATH_APP));
+
+define("RELATIVE_PATH_BASE", RELATIVE_PATH_APP);
 define("RELATIVE_PATH_LIBRARY", RELATIVE_PATH_APP . DIRECTORY_SEPARATOR . 'vendor');
-define("RELATIVE_PATH_HELPERS", RELATIVE_PATH_BASE);
-define("RELATIVE_PATH_TEMPLATE", RELATIVE_PATH_BASE . DIRECTORY_SEPARATOR . 'templates');
-define("RELATIVE_PATH_CONFIG", RELATIVE_PATH_BASE . DIRECTORY_SEPARATOR . 'config');
-define("RELATIVE_PATH_PAGES", RELATIVE_PATH_BASE . DIRECTORY_SEPARATOR . 'pages');
-define("RELATIVE_PATH_ASSET", RELATIVE_PATH_BASE . DIRECTORY_SEPARATOR . 'assets');
+define("RELATIVE_PATH_HELPERS", RELATIVE_PATH_APP . DIRECTORY_SEPARATOR . 'module');
+define("RELATIVE_PATH_TEMPLATE", RELATIVE_PATH_APP . DIRECTORY_SEPARATOR . 'templates');
+define("RELATIVE_PATH_CONFIG", RELATIVE_PATH_APP . DIRECTORY_SEPARATOR . 'config');
+define("RELATIVE_PATH_PAGES", RELATIVE_PATH_APP . DIRECTORY_SEPARATOR . 'pages');
+define("RELATIVE_PATH_ASSET", RELATIVE_PATH_APP . DIRECTORY_SEPARATOR . 'assets');
 define("RELATIVE_PATH_ASSET_IMG", RELATIVE_PATH_ASSET . DIRECTORY_SEPARATOR . 'img');
 define("RELATIVE_PATH_ASSET_CSS", RELATIVE_PATH_ASSET . DIRECTORY_SEPARATOR . 'css');
 define("RELATIVE_PATH_ASSET_JS", RELATIVE_PATH_ASSET . DIRECTORY_SEPARATOR . 'js');
@@ -35,17 +41,16 @@ define("RELATIVE_PATH_ASSET_JS", RELATIVE_PATH_ASSET . DIRECTORY_SEPARATOR . 'js
 // ---------------------------------------------------------------------------
 // DEFINE LOCAL PATHS
 // ---------------------------------------------------------------------------
-define("LOCAL_PATH_BASE", LOCAL_PATH_ROOT . RELATIVE_PATH_BASE);
-define("LOCAL_PATH_APP", LOCAL_PATH_ROOT . RELATIVE_PATH_APP);
-define("LOCAL_PATH_LIBRARY", LOCAL_PATH_ROOT . RELATIVE_PATH_LIBRARY);
-define("LOCAL_PATH_HELPERS", LOCAL_PATH_ROOT . RELATIVE_PATH_HELPERS);
-define("LOCAL_PATH_TEMPLATE", LOCAL_PATH_ROOT . RELATIVE_PATH_TEMPLATE);
-define("LOCAL_PATH_CONFIG", LOCAL_PATH_ROOT . RELATIVE_PATH_CONFIG);
-define("LOCAL_PATH_PAGES", LOCAL_PATH_ROOT . RELATIVE_PATH_PAGES);
-define("LOCAL_PATH_ASSET", LOCAL_PATH_ROOT . RELATIVE_PATH_ASSET);
-define("LOCAL_PATH_ASSET_IMG", LOCAL_PATH_ROOT . RELATIVE_PATH_ASSET_IMG);
-define("LOCAL_PATH_ASSET_CSS", LOCAL_PATH_ROOT . RELATIVE_PATH_ASSET_CSS);
-define("LOCAL_PATH_ASSET_JS", LOCAL_PATH_ROOT . RELATIVE_PATH_ASSET_JS);
+define("LOCAL_PATH_BASE", LOCAL_PATH_APP);
+define("LOCAL_PATH_LIBRARY", LOCAL_PATH_APP . DIRECTORY_SEPARATOR . 'vendor');
+define("LOCAL_PATH_HELPERS", LOCAL_PATH_APP . DIRECTORY_SEPARATOR . 'module');
+define("LOCAL_PATH_TEMPLATE", LOCAL_PATH_APP . DIRECTORY_SEPARATOR . 'templates');
+define("LOCAL_PATH_CONFIG", LOCAL_PATH_APP . DIRECTORY_SEPARATOR . 'config');
+define("LOCAL_PATH_PAGES", LOCAL_PATH_APP . DIRECTORY_SEPARATOR . 'pages');
+define("LOCAL_PATH_ASSET", LOCAL_PATH_APP . DIRECTORY_SEPARATOR . 'assets');
+define("LOCAL_PATH_ASSET_IMG", LOCAL_PATH_ASSET . DIRECTORY_SEPARATOR . 'img');
+define("LOCAL_PATH_ASSET_CSS", LOCAL_PATH_ASSET . DIRECTORY_SEPARATOR . 'css');
+define("LOCAL_PATH_ASSET_JS", LOCAL_PATH_ASSET . DIRECTORY_SEPARATOR . 'js');
 
 // ---------------------------------------------------------------------------
 // DEFINE URL PATHS
@@ -95,14 +100,12 @@ define("PAGE_PATH", (REQUEST_PATH_STRIP_QUERY === URL_SEPARATOR) ? PAGE_PATH_DEF
 
 define("ROOT", LOCAL_PATH_APP);
 define("HTTP_ROOT", isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : '_UNKNOWN_'));
-define("VIEW", ROOT."/view");
-define("CONTROLLER", ROOT."/controller");
 define("MODEL", ROOT."/model");
 
-define("ASSET", REQUEST_PROTOCOL . HTTP_PATH_APP . "/view/assets");
+define("ASSET", REQUEST_PROTOCOL . HTTP_PATH_APP . "/assets");
 define("ASSET_IMG", ASSET . "/images");
-define("CSS", VIEW . "/css");
-define("JS", VIEW . "/js");
+define("CSS", ROOT . "/css");
+define("JS", ROOT . "/js");
 
 
-define("MODULE", VIEW . "/module");
+define("MODULE", ROOT . "/module");

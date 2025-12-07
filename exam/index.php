@@ -353,18 +353,18 @@
     $percentageLabel = number_format($resultTotals['percentage'], 2, ',', ' ');
     $retakeLink = '';
     if ($sourceType === 'category' && $categoryKey !== null) {
-        $retakeLink = RELATIVE_PATH_APP . "/view/exam?category=" . urlencode($categoryKey) . "&count=" . $requestedCount;
+        $retakeLink = RELATIVE_PATH_APP . "/exam?category=" . urlencode($categoryKey) . "&count=" . $requestedCount;
     }
     if ($sourceType === 'qualification' && $qualificationKey !== null) {
-        $retakeLink = RELATIVE_PATH_APP . "/view/exam?qualification=" . urlencode($qualificationKey) . "&count=" . $requestedCount;
+        $retakeLink = RELATIVE_PATH_APP . "/exam?qualification=" . urlencode($qualificationKey) . "&count=" . $requestedCount;
     }
 
     $selectionLink = '';
     if ($sourceType === 'category' && $categoryKey !== null) {
-        $selectionLink = RELATIVE_PATH_APP . "/view/category?name=" . urlencode($categoryKey);
+        $selectionLink = RELATIVE_PATH_APP . "/category?name=" . urlencode($categoryKey);
     }
     if ($sourceType === 'qualification' && $qualificationKey !== null) {
-        $selectionLink = RELATIVE_PATH_APP . "/view/qualification?name=" . urlencode($qualificationKey);
+        $selectionLink = RELATIVE_PATH_APP . "/qualification?name=" . urlencode($qualificationKey);
     }
 
     $shouldShowTopActions = $isSubmitted && $questionCount > 1;
